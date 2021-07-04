@@ -1,24 +1,15 @@
 # zeus-3d
 
-## Project setup
-```
-npm install
-```
+> 基于cesium的地图项目
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+待办目标
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- [ ] vue项目初始化
+- [ ] 天地图加载
+- [ ] arcgis服务加载
+- [ ] ogc服务加载
+- [ ] ui组件引入
+- [ ] 图层树组件
+- [ ] 底图切换组件
+- [ ] 坐标高度组件
+- [ ] 三维模型加载
