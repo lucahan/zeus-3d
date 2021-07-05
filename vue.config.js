@@ -11,15 +11,22 @@ module.exports = {
     publicPath: "./",
     // 输出文件目录
     outputDir: "dist",
-    // eslint-loader 是否在保存的时候检查
     lintOnSave: false,
-    // webpack-dev-server 相关配置
     devServer: {
         open: process.platform === "darwin",
         host: "0.0.0.0",
         port: 8088,
         https: false,
-        hotOnly: false
+        hotOnly: false,
+        proxy: {
+            '/agmap': {
+                target: 'http://222.247.40.204:6080',  // 后台接口域名
+                changeOrigin: true,  //是否跨域
+                pathRewrite:{
+                    '^/agmap':'/'
+                }
+            }
+        }
     },
     configureWebpack: {
         output: {
@@ -45,7 +52,6 @@ module.exports = {
             })
         ],
         module: {
-            unknownContextCritical: /^.\/.*$/,
             unknownContextCritical: false
         }
     }

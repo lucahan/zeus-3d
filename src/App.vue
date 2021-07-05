@@ -41,6 +41,35 @@
                     })
                 );
 
+                //http://222.247.40.204:6080/arcgis/rest/services/img_services_2019/MapServer
+
+                // viewer.imageryLayers.addImageryProvider(
+                //     new this.cesium.ArcGisMapServerImageryProvider({
+                //         url: '/agmap/arcgis/rest/services/canyin/MapServer'
+                //     })
+                // );
+
+                viewer.imageryLayers.addImageryProvider(
+                    new this.cesium.ArcGisMapServerImageryProvider({
+                        url: '/agmap/arcgis/rest/services/canyin/MapServer'
+                    }));
+
+
+                const hospitalWms = new this.cesium.WebMapServiceImageryProvider({
+                    url: '/agmap/arcgis/services/yiyuan/MapServer/WmsServer',
+                    layers: '0',
+                    parameters: {
+                        transparent: true,     //是否透明
+                        format: 'image/png',
+                        version: '1.1.0',
+                        srs: 'EPSG:4326',
+                    }
+                });
+
+                viewer.imageryLayers.addImageryProvider(
+                    hospitalWms
+                );
+
                 // 将三维球定位到中国
                 viewer.camera.flyTo({
                     destination: Cesium.Cartesian3.fromDegrees(112.96, 28.20, 57850)
