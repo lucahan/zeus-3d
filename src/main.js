@@ -10,6 +10,7 @@ const widgets= require('cesium/Widgets/widgets.css');
 
 Vue.prototype.cesium = cesium
 Vue.prototype.widgets = widgets
+// window.cesium = cesium;
 
 
 new Vue({
